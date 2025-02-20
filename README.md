@@ -12,10 +12,10 @@ Here is a summary of all the complexities in the exercises:
 | 78       | Subsets                                                                                                               | $O(n*2^n)$      | $O(2^n)$         |
 | 13       | [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)                                                   | $O(n)$          | $O(1)$           |
 | 151      | [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)                                 | $O(n)$          | $O(n)$           |
-| 206      | [Reverse Linked List](https://confluence.endava.com/spaces/ARCHDISC/pages/140422221/Learning+Materials+System+Design) | $O(n^2)$        | $O(n)$           |
-| 92       | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/)                           | $$              | $$               |
+| 206      | [Reverse Linked List](https://confluence.endava.com/spaces/ARCHDISC/pages/140422221/Learning+Materials+System+Design) | $O(n)$          | $O(n)$           |
+| 92       | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/)                           | $O(n)$          | $O(n)$           |
 | 214      | Shortest Palindrome                                                                                                   | $O(n^2)$        | $O(1)$           |
-| 48       | Rotate Image                                                                                                          | $$              | $$               |
+| 48       | Rotate Image                                                                                                          | $O(n^2)$        | $O(1)$           |
 | 32       | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)                                 | $O(n)$          | $O(n)$           |
 
 # 78 Subsets
@@ -52,19 +52,21 @@ This is a simple problem. Trim the ending and beginning spaces, split the words 
 
 # 206 Reverse Linked List
 
-This problem uses the following approach: find the last element. Then find the one before that, and simply order them in the new reversed list.
-
+This problem uses the following approach: Store the elements of the node in an array, and reverse the values of the array.
 
 | **Code** | **Name**                                                                                                              | Time Complexity | Space Complexity |
 | -------- | --------------------------------------------------------------------------------------------------------------------- | --------------- | ---------------- |
-| 206      | [Reverse Linked List](https://confluence.endava.com/spaces/ARCHDISC/pages/140422221/Learning+Materials+System+Design) | $O(n^2)$        | $O(n)$           |
+| 206      | [Reverse Linked List](https://confluence.endava.com/spaces/ARCHDISC/pages/140422221/Learning+Materials+System+Design) | $O(n)$          | $O(n)$           |
 
-
-  
 
 # 92 Reverse Linked List II
 
-  
+For this problem, i took the same approach as in the reverse linked list. storing the elements of the node in an array, and reversing it's values. The difference is only doing it to the parts that are between the Left and right parameters. And finally adding the right parameter to the list
+
+| **Code** | **Name**                                                                                                              | Time Complexity | Space Complexity |
+| -------- | --------------------------------------------------------------------------------------------------------------------- | --------------- | ---------------- |
+| 92       | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/)                           | $O(n)$          | $O(n)$           |
+
 
 # 214 Shortest Palindrome
 
@@ -75,7 +77,13 @@ This problem uses the following approach: find the last element. Then find the o
 | 206      | [Reverse Linked List](https://confluence.endava.com/spaces/ARCHDISC/pages/140422221/Learning+Materials+System+Design) | $O(n^2)$        | $O(1)$           |
 # 48 Rotate Image
 
-  
+For this problem i transposed the matrix and then i "mirrored" it to the correct order. This takes advantage of the compiler allowing code like this `x,y=y,x`, as i am NOT creating any extra space, but the compiler will do (as it has to package and unpackage the values to an structure)
+
+| **Code** | **Name**     | Time Complexity | Space Complexity |
+| -------- | ------------ | --------------- | ---------------- |
+| 48       | Rotate Image | $O(n^2)$        | $O(1)$           |
+
+
 
 # 32 Longest Valid Parentheses
 

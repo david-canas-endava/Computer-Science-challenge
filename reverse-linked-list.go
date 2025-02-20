@@ -9,24 +9,16 @@
 	if head == nil {
 		return nil
 	}
-	copy := head
-	temp := copy
-	depth := 0
+	temp := head
+    nodes := make([]*ListNode,0)
+    nodes = append(nodes,temp)
 	for temp.Next != nil {
-		depth++
-		temp = temp.Next
-	}
-	r := temp
-    RHead := r
-	for x := depth; x >= 1; x-- {
-		temp = copy
-		for y := x - 1; y >= 1; y-- {
-			temp = temp.Next
-		}
-		temp.Next = nil
-		r.Next = temp
-		r = r.Next
+        temp = temp.Next
+		nodes = append(nodes,temp)
 	}
 
-	return RHead
+    for i,j:=0,len(nodes)-1;i<j;i,j= i+1,j-1{
+        nodes[i].Val, nodes[j].Val = nodes[j].Val,nodes[i].Val
+    }
+	return head
 }
